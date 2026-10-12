@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login - WorkVoice AI</title>
+
+    <!-- COMMON CSS -->
+    <link rel="stylesheet" href="css/common.css">
+
+    <!-- LOGIN PAGE CSS -->
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         NAVBAR
+    ================================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            WorkVoice <span>AI</span>
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="register.html" class="nav-button">
+                Register
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================================
+         LOGIN SECTION
+    ================================= -->
+
+    <main class="login-page">
+
+
+        <div class="login-container">
+
+
+            <!-- HEADER -->
+
+            <div class="login-header">
+
+                <h1>
+                    Welcome to
+                    <span>WorkVoice</span>
+                </h1>
+
+                <p>
+                    Login to raise complaints,
+                    track issues and manage workplace concerns.
+                </p>
+
+            </div>
+
+
+
+            <!-- LOGIN FORM -->
+
+            <form
+                id="loginForm"
+                class="login-form"
+            >
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <p
+                    id="loginMessage"
+                    class="login-message"
+                ></p>
+
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+                    Login
+                </button>
+
+
+            </form>
+
+
+
+            <!-- REGISTER LINK -->
+
+            <div class="register-link">
+
+                Don't have an account?
+
+                <a href="register.html">
+                    Create an account
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+<script src="js/login.js"></script>
+</body>
+
+</html>

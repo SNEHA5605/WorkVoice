@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Owner Dashboard - WorkVoice AI
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/common.css">
+
+    <link
+        rel="stylesheet"
+        href="css/owner-dashboard.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         NAVBAR
+    ========================================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            WorkVoice <span>AI</span>
+        </div>
+
+
+        <div class="nav-right">
+
+            <span id="ownerName">
+                Owner
+            </span>
+
+
+            <button
+                class="nav-logout"
+                id="logoutBtn">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ========================================
+         DASHBOARD LAYOUT
+    ========================================= -->
+
+    <div class="dashboard-container">
+
+
+        <!-- ========================================
+             SIDEBAR
+        ========================================= -->
+
+        <aside class="sidebar">
+
+
+            <button
+                class="sidebar-item active"
+                data-section="overview">
+
+                Dashboard
+
+            </button>
+
+
+            <button
+                class="sidebar-item"
+                data-section="sites">
+
+                My Sites
+
+            </button>
+
+
+            <button
+                class="sidebar-item"
+                data-section="create-site">
+
+                Create Site
+
+            </button>
+
+
+            <button
+                class="sidebar-item"
+                data-section="workers">
+
+                Workers
+
+            </button>
+
+
+            <button
+                class="sidebar-item"
+                data-section="complaints">
+
+                Complaints
+
+            </button>
+
+
+        </aside>
+
+
+        <!-- ========================================
+             MAIN CONTENT
+        ========================================= -->
+
+        <main class="main-content">
+
+
+            <!-- ========================================
+                 OVERVIEW
+            ========================================= -->
+
+            <section
+                id="overview"
+                class="dashboard-section active">
+
+
+                <div class="welcome-section">
+
+                    <p class="small-heading">
+                        OWNER DASHBOARD
+                    </p>
+
+
+                    <h1>
+                        Welcome,
+
+                        <span id="welcomeName">
+                            Owner
+                        </span>
+                    </h1>
+
+
+                    <p>
+                        Manage your worksites, workers
+                        and workplace complaints from
+                        one place.
+                    </p>
+
+                </div>
+
+
+                <!-- Statistics -->
+
+                <div class="stats-grid">
+
+
+                    <div class="stat-card">
+
+                        <p>
+                            Total Sites
+                        </p>
+
+                        <h2 id="totalSites">
+                            0
+                        </h2>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <p>
+                            Total Workers
+                        </p>
+
+                        <h2 id="totalWorkers">
+                            0
+                        </h2>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <p>
+                            Open Complaints
+                        </p>
+
+                        <h2 id="openComplaints">
+                            0
+                        </h2>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <p>
+                            Escalated
+                        </p>
+
+                        <h2 id="escalatedComplaints">
+                            0
+                        </h2>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Quick Actions -->
+
+                <div class="section-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Quick Actions
+                            </h2>
+
+                            <p>
+                                Manage your workplace quickly.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions">
+
+
+                        <button
+                            class="action-card"
+                            data-section-target="create-site">
+
+                            <span class="action-icon">
+                                +
+                            </span>
+
+                            <strong>
+                                Create Site
+                            </strong>
+
+                            <small>
+                                Add a new workplace
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            class="action-card"
+                            data-section-target="sites">
+
+                            <span class="action-icon">
+                                ◉
+                            </span>
+
+                            <strong>
+                                View Sites
+                            </strong>
+
+                            <small>
+                                Manage your worksites
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            class="action-card"
+                            data-section-target="workers">
+
+                            <span class="action-icon">
+                                👥
+                            </span>
+
+                            <strong>
+                                Manage Workers
+                            </strong>
+
+                            <small>
+                                View assigned workers
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            class="action-card"
+                            data-section-target="complaints">
+
+                            <span class="action-icon">
+                                !
+                            </span>
+
+                            <strong>
+                                Complaints
+                            </strong>
+
+                            <small>
+                                Review worker complaints
+                            </small>
+
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ========================================
+                 MY SITES
+            ========================================= -->
+
+            <section
+                id="sites"
+                class="dashboard-section">
+
+
+                <div class="page-header">
+
+                    <div>
+
+                        <p class="small-heading">
+                            WORKPLACES
+                        </p>
+
+                        <h1>
+                            My Sites
+                        </h1>
+
+                        <p>
+                            View and manage your registered
+                            worksites.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="primary-btn"
+                        data-section-target="create-site">
+
+                        + Create Site
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="sitesContainer"
+                    class="sites-grid">
+
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            ◉
+                        </div>
+
+                        <h3>
+                            Loading sites...
+                        </h3>
+
+                        <p>
+                            Please wait.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ========================================
+                 CREATE SITE
+            ========================================= -->
+
+            <section
+                id="create-site"
+                class="dashboard-section">
+
+
+                <div class="page-header">
+
+                    <div>
+
+                        <p class="small-heading">
+                            WORKPLACE MANAGEMENT
+                        </p>
+
+                        <h1>
+                            Create Worksite
+                        </h1>
+
+                        <p>
+                            Register a workplace or project
+                            that you manage.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-card">
+
+
+                    <form id="createSiteForm">
+
+
+                        <div class="form-group">
+
+                            <label for="siteName">
+                                Site / Project Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="siteName"
+                                placeholder="e.g. ABC Construction Project"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="location">
+                                Location
+                            </label>
+
+                            <input
+                                type="text"
+                                id="location"
+                                placeholder="e.g. Pune, Maharashtra"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="projectType">
+                                Project Type
+                            </label>
+
+                            <select
+                                id="projectType"
+                                required>
+
+                                <option value="">
+                                    Select project type
+                                </option>
+
+                                <option value="Construction">
+                                    Construction
+                                </option>
+
+                                <option value="Infrastructure">
+                                    Infrastructure
+                                </option>
+
+                                <option value="Manufacturing">
+                                    Manufacturing
+                                </option>
+
+                                <option value="Road Development">
+                                    Road Development
+                                </option>
+
+                                <option value="Private Project">
+                                    Private Project
+                                </option>
+
+                                <option value="Government Project">
+                                    Government Project
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div
+                            id="siteMessage"
+                            class="form-message">
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="primary-btn">
+
+                            Create Worksite
+
+                        </button>
+
+
+                    </form>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ========================================
+                 WORKERS
+            ========================================= -->
+
+            <section
+                id="workers"
+                class="dashboard-section">
+
+
+                <div class="page-header">
+
+                    <div>
+
+                        <p class="small-heading">
+                            WORKFORCE
+                        </p>
+
+                        <h1>
+                            Workers
+                        </h1>
+
+                        <p>
+                            View workers and assign them
+                            to your worksites.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Registered Workers -->
+
+                <div class="section-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Registered Workers
+                            </h2>
+
+                            <p>
+                                Assign workers to your worksites.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="workersContainer"
+                        class="workers-grid">
+
+
+                        <div class="empty-state">
+
+                            <div class="empty-icon">
+                                👥
+                            </div>
+
+                            <h3>
+                                Loading workers...
+                            </h3>
+
+                            <p>
+                                Please wait.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Assigned Workers -->
+
+                <div class="section-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Assigned Workers
+                            </h2>
+
+                            <p>
+                                Workers currently assigned
+                                to your worksites.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="assignedWorkersContainer"
+                        class="assigned-workers-container">
+
+
+                        <div class="empty-state">
+
+                            <h3>
+                                Loading assignments...
+                            </h3>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ========================================
+                 COMPLAINTS
+            ========================================= -->
+
+            <section
+                id="complaints"
+                class="dashboard-section">
+
+
+                <div class="page-header">
+
+                    <div>
+
+                        <p class="small-heading">
+                            WORKER SUPPORT
+                        </p>
+
+                        <h1>
+                            Complaints
+                        </h1>
+
+                        <p>
+                            Review and respond to complaints
+                            raised by workers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Complaint Statistics -->
+
+                <div class="stats-grid">
+
+
+                    <div class="stat-card">
+
+                        <p>
+                            Total Complaints
+                        </p>
+
+                        <h2 id="totalComplaints">
+                            0
+                        </h2>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <p>
+                            Open Complaints
+                        </p>
+
+                        <h2 id="complaintsOpenCount">
+                            0
+                        </h2>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <p>
+                            Resolved Complaints
+                        </p>
+
+                        <h2 id="resolvedComplaints">
+                            0
+                        </h2>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <p>
+                            Escalated Complaints
+                        </p>
+
+                        <h2 id="complaintsEscalatedCount">
+                            0
+                        </h2>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Complaint List -->
+
+                <div class="section-card">
+
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Worker Complaints
+                            </h2>
+
+                            <p>
+                                Review complaints submitted
+                                by workers at your worksites.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="complaintsContainer"
+                        class="complaints-container">
+
+
+                        <div class="empty-state">
+
+                            <div class="empty-icon">
+                                !
+                            </div>
+
+                            <h3>
+                                Loading complaints...
+                            </h3>
+
+                            <p>
+                                Please wait.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+    <script src="js/owner.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Worker Dashboard - WorkVoice AI</title>
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="css/common.css">
+
+    <!-- Worker Dashboard CSS -->
+    <link rel="stylesheet" href="css/worker-dashboard.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         DASHBOARD NAVBAR
+    ========================================== -->
+
+    <header class="dashboard-navbar">
+
+        <div class="dashboard-logo">
+            WorkVoice AI
+        </div>
+
+        <div class="user-section">
+
+            <div class="user-icon">
+                W
+            </div>
+
+            <div class="user-info">
+                <strong id="workerName">Worker</strong>
+                <small>Worker</small>
+            </div>
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="logout-button">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         DASHBOARD LAYOUT
+    ========================================== -->
+
+    <div class="dashboard-layout">
+
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside class="sidebar">
+
+            <button
+                type="button"
+                class="menu-item active"
+                data-section="overview">
+
+                🏠
+                <span>Dashboard</span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="menu-item"
+                data-section="complaints">
+
+                📋
+                <span>My Complaints</span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="menu-item"
+                data-section="raise-complaint">
+
+                ➕
+                <span>Raise Complaint</span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="menu-item"
+                data-section="leave">
+
+                📅
+                <span>Leave Request</span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="menu-item"
+                data-section="medical">
+
+                🏥
+                <span>Medical Issue</span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="menu-item"
+                data-section="help">
+
+                ❓
+                <span>Help</span>
+
+            </button>
+
+        </aside>
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="dashboard-main">
+
+
+            <!-- =================================
+                 OVERVIEW SECTION
+            ================================== -->
+
+            <section
+                id="overview"
+                class="dashboard-section active-section">
+
+                <div class="page-heading">
+
+                    <div>
+                        <h1>
+                            Welcome,
+                            <span id="welcomeWorkerName">
+                                Worker
+                            </span>
+                        </h1>
+
+                        <p>
+                            Track your complaints, workplace issues
+                            and requests from one place.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     STATISTICS
+                ================================== -->
+
+                <div class="stats-container">
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            📋
+                        </div>
+
+                        <div>
+                            <span class="stat-label">
+                                Total Complaints
+                            </span>
+
+                            <h2 id="totalComplaints">
+                                0
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            🔄
+                        </div>
+
+                        <div>
+                            <span class="stat-label">
+                                Open Complaints
+                            </span>
+
+                            <h2 id="openComplaints">
+                                0
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ✅
+                        </div>
+
+                        <div>
+                            <span class="stat-label">
+                                Resolved
+                            </span>
+
+                            <h2 id="resolvedComplaints">
+                                0
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            🚨
+                        </div>
+
+                        <div>
+                            <span class="stat-label">
+                                Escalated
+                            </span>
+
+                            <h2 id="escalatedComplaints">
+                                0
+                            </h2>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     QUICK ACTIONS
+                ================================== -->
+
+                <div class="content-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h2>
+                                Quick Actions
+                            </h2>
+
+                            <p>
+                                Quickly access common worker services.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions">
+
+
+                        <button
+                            type="button"
+                            class="quick-action"
+                            data-section="raise-complaint">
+
+                            <span class="quick-action-icon">
+                                📝
+                            </span>
+
+                            <span>
+                                <strong>
+                                    Raise Complaint
+                                </strong>
+
+                                <small>
+                                    Report a workplace issue
+                                </small>
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="quick-action"
+                            data-section="leave">
+
+                            <span class="quick-action-icon">
+                                📅
+                            </span>
+
+                            <span>
+                                <strong>
+                                    Request Leave
+                                </strong>
+
+                                <small>
+                                    Submit a leave request
+                                </small>
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="quick-action"
+                            data-section="medical">
+
+                            <span class="quick-action-icon">
+                                🏥
+                            </span>
+
+                            <span>
+                                <strong>
+                                    Medical Issue
+                                </strong>
+
+                                <small>
+                                    Report a medical concern
+                                </small>
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="quick-action"
+                            data-section="complaints">
+
+                            <span class="quick-action-icon">
+                                🔎
+                            </span>
+
+                            <span>
+                                <strong>
+                                    Track Complaints
+                                </strong>
+
+                                <small>
+                                    Check complaint status
+                                </small>
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     RECENT COMPLAINTS
+                ================================== -->
+
+                <div class="content-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h2>
+                                Recent Complaints
+                            </h2>
+
+                            <p>
+                                Your latest workplace complaints.
+                            </p>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            data-section="complaints">
+
+                            View All
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="recentComplaints"
+                        class="complaints-list">
+
+                        <div class="empty-state">
+
+                            <div class="empty-icon">
+                                📋
+                            </div>
+
+                            <h3>
+                                No complaints yet
+                            </h3>
+
+                            <p>
+                                You haven't raised any complaints.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 MY COMPLAINTS SECTION
+            ================================== -->
+
+            <section
+                id="complaints"
+                class="dashboard-section">
+
+                <div class="page-heading">
+
+                    <div>
+                        <h1>
+                            My Complaints
+                        </h1>
+
+                        <p>
+                            View and track all your workplace complaints.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h2>
+                                Complaint History
+                            </h2>
+
+                            <p>
+                                Track the status of complaints you have submitted.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="complaintsList"
+                        class="complaints-list">
+
+                        <div class="empty-state">
+
+                            <div class="empty-icon">
+                                📋
+                            </div>
+
+                            <h3>
+                                No complaints found
+                            </h3>
+
+                            <p>
+                                Your submitted complaints will appear here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 RAISE COMPLAINT SECTION
+            ================================== -->
+
+            <section
+                id="raise-complaint"
+                class="dashboard-section">
+
+                <div class="page-heading">
+
+                    <div>
+                        <h1>
+                            Raise a Complaint
+                        </h1>
+
+                        <p>
+                            Tell us about a problem at your workplace.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="content-card complaint-form-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h2>
+                                Complaint Details
+                            </h2>
+
+                            <p>
+                                Provide accurate information so the issue
+                                can be reviewed.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <form id="complaintForm">
+
+
+                        <!-- CATEGORY -->
+
+                        <div class="form-group">
+
+                            <label for="complaintCategory">
+                                Complaint Category
+                            </label>
+
+                            <select
+                                id="complaintCategory"
+                                name="category"
+                                required>
+
+                                <option value="">
+                                    Select a category
+                                </option>
+
+                                <option value="Safety">
+                                    Safety
+                                </option>
+
+                                <option value="Payment">
+                                    Payment
+                                </option>
+
+                                <option value="Medical">
+                                    Medical
+                                </option>
+
+                                <option value="Leave">
+                                    Leave
+                                </option>
+
+                                <option value="Equipment/Tools">
+                                    Equipment / Tools
+                                </option>
+
+                                <option value="Working Hours">
+                                    Working Hours
+                                </option>
+
+                                <option value="Food/Water">
+                                    Food / Water
+                                </option>
+
+                                <option value="Accommodation">
+                                    Accommodation
+                                </option>
+
+                                <option value="Supervisor/Owner">
+                                    Supervisor / Owner
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- PRIORITY -->
+
+                        <div class="form-group">
+
+                            <label for="complaintPriority">
+                                Priority
+                            </label>
+
+                            <select
+                                id="complaintPriority"
+                                name="priority"
+                                required>
+
+                                <option value="">
+                                    Select priority
+                                </option>
+
+                                <option value="LOW">
+                                    Low
+                                </option>
+
+                                <option value="MEDIUM">
+                                    Medium
+                                </option>
+
+                                <option value="HIGH">
+                                    High
+                                </option>
+
+                                <option value="CRITICAL">
+                                    Critical
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- DESCRIPTION -->
+
+                        <div class="form-group">
+
+                            <label for="complaintDescription">
+                                Describe the Problem
+                            </label>
+
+                            <textarea
+                                id="complaintDescription"
+                                name="description"
+                                rows="7"
+                                placeholder="Describe the workplace issue clearly..."
+                                required></textarea>
+
+                        </div>
+
+
+                        <!-- MESSAGE -->
+
+                        <div
+                            id="complaintMessage"
+                            class="form-message">
+                        </div>
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            type="submit"
+                            class="primary-button">
+
+                            Submit Complaint
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 LEAVE SECTION
+            ================================== -->
+
+            <section
+                id="leave"
+                class="dashboard-section">
+
+                <div class="page-heading">
+
+                    <div>
+                        <h1>
+                            Leave Request
+                        </h1>
+
+                        <p>
+                            Submit a request for workplace leave.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="content-card coming-soon-card">
+
+                    <div class="coming-soon-icon">
+                        📅
+                    </div>
+
+                    <h2>
+                        Leave Requests
+                    </h2>
+
+                    <p>
+                        The leave request feature will be connected
+                        to the WorkVoice AI backend in the next stage.
+                    </p>
+
+                    <span class="coming-soon-badge">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 MEDICAL SECTION
+            ================================== -->
+
+            <section
+                id="medical"
+                class="dashboard-section">
+
+                <div class="page-heading">
+
+                    <div>
+                        <h1>
+                            Medical Issue
+                        </h1>
+
+                        <p>
+                            Report a workplace-related medical concern.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="content-card coming-soon-card">
+
+                    <div class="coming-soon-icon">
+                        🏥
+                    </div>
+
+                    <h2>
+                        Medical Support
+                    </h2>
+
+                    <p>
+                        The medical issue reporting feature will be
+                        connected to the backend in the next stage.
+                    </p>
+
+                    <span class="coming-soon-badge">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 HELP SECTION
+            ================================== -->
+
+            <section
+                id="help"
+                class="dashboard-section">
+
+                <div class="page-heading">
+
+                    <div>
+                        <h1>
+                            Help & Support
+                        </h1>
+
+                        <p>
+                            Understand how WorkVoice AI handles your complaints.
+                        </p>
+                    </div>
+
+                </div>
+
+
+
+<!-- =================================
+     WORKVOICE AI ASSISTANT
+================================== -->
+
+<div class="content-card ai-assistant-container">
+
+    <div class="card-heading">
+
+        <div>
+
+            <h2>
+                🤖 WorkVoice AI Assistant
+            </h2>
+
+            <p>
+                Ask questions about salary, safety,
+                leave, medical issues and workplace policies.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- AI CHAT -->
+
+    <div
+        id="aiChatBox"
+        class="ai-chat-box"
+    >
+
+        <!-- Initial AI Message -->
+
+        <div class="ai-message">
+
+            <div class="ai-message-label">
+                WorkVoice AI
+            </div>
+
+            <p>
+                Hello! 👋 I'm your WorkVoice AI Assistant.
+                You can ask me about workplace policies,
+                salary, safety, leave or medical issues.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUESTION FORM -->
+
+    <form
+        id="aiQuestionForm"
+        class="ai-question-form"
+    >
+
+        <input
+            type="text"
+            id="aiQuestion"
+            placeholder="Ask your question..."
+            autocomplete="off"
+            required
+        >
+
+        <button
+            type="submit"
+            id="aiAskButton"
+        >
+            Ask AI
+        </button>
+
+    </form>
+
+
+    <!-- STATUS -->
+
+    <div
+        id="aiMessage"
+        class="ai-message-status"
+    ></div>
+
+</div>
+
+
+
+
+
+
+                <div class="content-card help-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h2>
+                                How WorkVoice AI Works
+                            </h2>
+
+                            <p>
+                                Follow these simple steps to report an issue.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="help-steps">
+
+
+                        <div class="help-step">
+
+                            <div class="step-number">
+                                1
+                            </div>
+
+                            <div>
+                                <h3>
+                                    Raise a Complaint
+                                </h3>
+
+                                <p>
+                                    Select the appropriate category,
+                                    priority and describe your issue.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="help-step">
+
+                            <div class="step-number">
+                                2
+                            </div>
+
+                            <div>
+                                <h3>
+                                    Owner Reviews It
+                                </h3>
+
+                                <p>
+                                    The complaint is made available
+                                    to the owner responsible for your workplace.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="help-step">
+
+                            <div class="step-number">
+                                3
+                            </div>
+
+                            <div>
+                                <h3>
+                                    Issue Is Addressed
+                                </h3>
+
+                                <p>
+                                    The owner can review, respond to
+                                    and update the complaint.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="help-step">
+
+                            <div class="step-number">
+                                4
+                            </div>
+
+                            <div>
+                                <h3>
+                                    Escalation
+                                </h3>
+
+                                <p>
+                                    Complaints that remain unresolved
+                                    can later be escalated for authority review.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h2>
+                                Important
+                            </h2>
+
+                            <p>
+                                Please provide accurate information
+                                when submitting a complaint.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <p class="help-text">
+
+                        WorkVoice AI is designed to provide workers
+                        with a digital channel to report and track
+                        workplace concerns. Emergency situations
+                        should be reported through the appropriate
+                        emergency services or responsible personnel.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="js/worker.js"></script>
+
+</body>
+
+</html>

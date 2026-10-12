@@ -1,0 +1,664 @@
+/* ========================================
+   WORKVOICE AI - LANDING PAGE CSS
+======================================== */
+
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 70px;
+
+    padding: 80px 8%;
+
+    background: transparent;
+
+    position: relative;
+}
+
+
+/* BLUE GLOW - LEFT */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    background: rgba(59, 130, 246, 0.18);
+
+    border-radius: 50%;
+
+    filter: blur(60px);
+
+    top: 50px;
+    left: -100px;
+
+    z-index: -1;
+}
+
+
+/* BLUE GLOW - RIGHT */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    background: rgba(14, 165, 233, 0.16);
+
+    border-radius: 50%;
+
+    filter: blur(70px);
+
+    bottom: 0;
+    right: -100px;
+
+    z-index: -1;
+}
+
+
+/* ========================================
+   HERO CONTENT
+======================================== */
+
+.hero-content {
+    max-width: 620px;
+
+    z-index: 2;
+}
+
+
+.tagline {
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #1d4ed8;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+
+.hero h1 {
+    font-size: 58px;
+
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    color: #0f2f63;
+
+    margin-bottom: 25px;
+}
+
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+
+.description {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #334e75;
+
+    max-width: 580px;
+
+    margin-bottom: 35px;
+}
+
+
+/* ========================================
+   HERO BUTTONS
+======================================== */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 18px;
+
+    align-items: center;
+}
+
+
+/* ========================================
+   HERO CARD
+======================================== */
+
+.hero-card {
+    width: 440px;
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    border-radius: 22px;
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+
+    box-shadow:
+        0 25px 60px rgba(30, 64, 175, 0.20);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ========================================
+   CARD HEADER
+======================================== */
+
+.card-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 15px;
+
+    border-bottom:
+        1px solid rgba(59, 130, 246, 0.15);
+}
+
+
+.card-header span:first-child {
+    font-size: 20px;
+
+    font-weight: 800;
+
+    color: #174ea6;
+}
+
+
+.card-header span:last-child {
+    color: #22c55e;
+
+    font-size: 18px;
+}
+
+
+/* ========================================
+   COMPLAINT CARDS
+======================================== */
+
+.complaint-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 17px;
+
+    margin-bottom: 14px;
+
+    background: rgba(239, 246, 255, 0.80);
+
+    border:
+        1px solid rgba(147, 197, 253, 0.30);
+
+    border-radius: 14px;
+
+    transition: all 0.3s ease;
+}
+
+
+.complaint-card:last-child {
+    margin-bottom: 0;
+}
+
+
+.complaint-card:hover {
+    transform: translateX(5px);
+
+    background: rgba(255, 255, 255, 0.90);
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.12);
+}
+
+
+/* ========================================
+   COMPLAINT ICON
+======================================== */
+
+.complaint-icon {
+    width: 45px;
+    height: 45px;
+
+    min-width: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #dbeafe;
+
+    font-size: 20px;
+}
+
+
+/* ========================================
+   COMPLAINT TEXT
+======================================== */
+
+.complaint-card h3 {
+    font-size: 15px;
+
+    color: #163b72;
+
+    margin-bottom: 5px;
+}
+
+
+.complaint-card p {
+    font-size: 13px;
+
+    color: #64748b;
+
+    line-height: 1.4;
+}
+
+
+/* ========================================
+   STATUS
+======================================== */
+
+.status {
+    margin-left: auto;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    color: #1d4ed8;
+
+    background: #dbeafe;
+
+    white-space: nowrap;
+}
+
+
+.status.resolved {
+    color: #15803d;
+
+    background: #dcfce7;
+}
+
+
+/* ========================================
+   FEATURES SECTION
+======================================== */
+
+.features {
+    padding: 90px 8%;
+
+    background: transparent;
+
+    text-align: center;
+
+    position: relative;
+}
+
+
+.features h2 {
+    font-size: 34px;
+
+    color: #0f2f63;
+
+    margin-bottom: 50px;
+}
+
+
+/* ========================================
+   FEATURE CONTAINER
+======================================== */
+
+.feature-container {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ========================================
+   FEATURE CARD
+======================================== */
+
+.feature {
+    padding: 30px 24px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.60);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 35px rgba(30, 64, 175, 0.12);
+
+    transition: all 0.3s ease;
+}
+
+
+.feature:hover {
+    transform: translateY(-8px);
+
+    background: rgba(255, 255, 255, 0.72);
+
+    box-shadow:
+        0 20px 45px rgba(30, 64, 175, 0.18);
+}
+
+
+/* ========================================
+   FEATURE ICON
+======================================== */
+
+.feature > div {
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #dbeafe,
+        #bfdbfe
+    );
+
+    font-size: 27px;
+}
+
+
+/* ========================================
+   FEATURE TITLE
+======================================== */
+
+.feature h3 {
+    font-size: 19px;
+
+    color: #174ea6;
+
+    margin-bottom: 12px;
+}
+
+
+/* ========================================
+   FEATURE DESCRIPTION
+======================================== */
+
+.feature p {
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #526987;
+}
+
+
+/* ========================================
+   HERO RESPONSIVE
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .hero {
+        gap: 40px;
+
+        padding: 70px 6%;
+    }
+
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+
+    .hero-card {
+        width: 380px;
+    }
+
+
+    .feature-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* ========================================
+   TABLET / MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: auto;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 60px 6% 70px;
+
+        gap: 45px;
+    }
+
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+
+    .tagline {
+        font-size: 12px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .hero h1 {
+        font-size: 40px;
+
+        line-height: 1.15;
+    }
+
+
+    .description {
+        font-size: 16px;
+
+        line-height: 1.6;
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    .hero-buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    .hero-card {
+        width: 100%;
+
+        max-width: 480px;
+
+        text-align: left;
+    }
+
+
+    .features {
+        padding: 65px 6%;
+    }
+
+
+    .features h2 {
+        font-size: 28px;
+
+        line-height: 1.3;
+
+        margin-bottom: 35px;
+    }
+
+
+    .feature-container {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding: 50px 5% 60px;
+    }
+
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+
+    .description {
+        font-size: 15px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .hero-card {
+        padding: 18px;
+
+        border-radius: 18px;
+    }
+
+
+    .complaint-card {
+        padding: 13px;
+
+        gap: 10px;
+    }
+
+
+    .complaint-icon {
+        width: 40px;
+        height: 40px;
+
+        min-width: 40px;
+
+        font-size: 17px;
+    }
+
+
+    .complaint-card h3 {
+        font-size: 14px;
+    }
+
+
+    .complaint-card p {
+        font-size: 12px;
+    }
+
+
+    .status {
+        font-size: 10px;
+
+        padding: 5px 8px;
+    }
+
+
+    .features {
+        padding: 55px 5%;
+    }
+
+
+    .features h2 {
+        font-size: 25px;
+    }
+
+
+    .feature {
+        padding: 25px 20px;
+    }
+}

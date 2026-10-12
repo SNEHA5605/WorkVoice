@@ -1,0 +1,21 @@
+
+# Node.js dependencies
+node_modules/
+backend/node_modules/
+
+# Environment variables and secrets
+.env
+**/.env
+
+# Python generated files
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Java compiled files
+*.class
+
+# IDE files
+.vscode/
+.idea/

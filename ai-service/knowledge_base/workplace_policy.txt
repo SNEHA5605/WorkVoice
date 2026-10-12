@@ -1,0 +1,34 @@
+WorkVoice General Workplace Support Policy
+
+WorkVoice allows workers to report problems related to their workplace.
+
+Common workplace complaints include:
+- Lack of equipment or tools
+- Accommodation problems
+- Water or food problems
+- Excessive working hours
+- Supervisor-related problems
+- Workplace infrastructure problems
+- Construction delays
+- Material shortages
+- Other workplace issues
+
+Workers should provide a clear description of the problem.
+
+The owner or responsible person can review the complaint and update its status.
+
+Complaint statuses can include:
+SUBMITTED
+ASSIGNED
+IN_PROGRESS
+RESOLVED
+OVERDUE
+ESCALATED
+
+Workers can track their complaints through the WorkVoice dashboard.
+
+If a complaint remains unresolved beyond the configured period, it can become overdue.
+
+An overdue complaint can be escalated by the worker through WorkVoice.
+
+Workers should provide accurate information when submitting complaints.

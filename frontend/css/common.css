@@ -1,0 +1,343 @@
+/* ========================================
+   WORKVOICE AI - COMMON CSS
+======================================== */
+
+
+/* ========================================
+   GLOBAL RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #0f172a;
+
+    min-height: 100vh;
+
+    /* BLUE SHADES BACKGROUND */
+    background:
+        radial-gradient(
+            circle at 8% 10%,
+            rgba(147, 197, 253, 0.70),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(96, 165, 250, 0.55),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 15% 70%,
+            rgba(56, 189, 248, 0.45),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(37, 99, 235, 0.40),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(30, 64, 175, 0.30),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #dbeafe 0%,
+            #bfdbfe 25%,
+            #bae6fd 50%,
+            #93c5fd 75%,
+            #dbeafe 100%
+        );
+
+    background-attachment: fixed;
+
+    overflow-x: hidden;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 8%;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-size: 28px;
+
+    font-weight: 800;
+
+    color: #0f3d91;
+
+    letter-spacing: -0.5px;
+}
+
+
+.logo span {
+    color: #2563eb;
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+.nav-links a {
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #173b73;
+
+    transition: 0.3s ease;
+}
+
+
+.nav-links a:hover {
+    color: #1d4ed8;
+}
+
+
+/* NAV BUTTON */
+
+.nav-button {
+    padding: 11px 22px;
+
+    color: white !important;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.25);
+
+    transition: 0.3s ease;
+}
+
+
+.nav-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(37, 99, 235, 0.35);
+}
+
+
+/* ========================================
+   COMMON BUTTONS
+======================================== */
+
+.primary-button {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    border-radius: 9px;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.30);
+
+    transition: all 0.3s ease;
+}
+
+
+.primary-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(37, 99, 235, 0.40);
+}
+
+
+.secondary-button {
+    display: inline-block;
+
+    padding: 13px 28px;
+
+    border-radius: 9px;
+
+    color: #1d4ed8;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    border: 1px solid rgba(37, 99, 235, 0.30);
+
+    backdrop-filter: blur(10px);
+
+    transition: all 0.3s ease;
+}
+
+
+.secondary-button:hover {
+    background: rgba(255, 255, 255, 0.70);
+
+    transform: translateY(-3px);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    padding: 25px 8%;
+
+    text-align: center;
+
+    background: rgba(30, 64, 175, 0.20);
+
+    backdrop-filter: blur(12px);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+
+    color: #1e3a6f;
+
+    font-size: 14px;
+}
+
+
+footer p {
+    margin: 0;
+}
+
+
+/* ========================================
+   COMMON RESPONSIVE NAVBAR
+======================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 17px 6%;
+    }
+
+
+    .logo {
+        font-size: 23px;
+    }
+
+
+    .nav-links {
+        gap: 12px;
+    }
+
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+
+    .nav-button {
+        padding: 9px 15px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+
+    .logo {
+        font-size: 21px;
+    }
+
+
+    .nav-links {
+        gap: 8px;
+    }
+
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+
+    .nav-button {
+        padding: 8px 12px;
+    }
+}
